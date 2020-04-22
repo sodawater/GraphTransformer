@@ -1,5 +1,5 @@
 # GraphTransformer
-An implementation for paper "AMR-to-text Generation with Graph Transformer" (accepted at TACL19)
+An implementation for paper "AMR-to-text Generation with Graph Transformer" (accepted at TACL20)
 
 coming soon...
 
