@@ -223,9 +223,9 @@ def infer(hparams):
     if ckpt and tf.train.checkpoint_exists(ckpt.model_checkpoint_path):
         global_step = train_model.model.global_step.eval(session=train_sess)
         infer_model.model.saver.restore(infer_sess, ckpt.model_checkpoint_path)
-        x = hparams.train_dir.split("/")[-2]
-        f1 = open("output/" + x + "/ref_file" + str(global_step), "w", encoding="utf-8")
-        f2 = open("output/" + x + "/predict_file" + str(global_step), "w", encoding="utf-8")
+        
+        f1 = open("output/" + "ref_file" + str(global_step), "w", encoding="utf-8")
+        f2 = open("output/" + "predict_file" + str(global_step), "w", encoding="utf-8")
         ct = 0
         for id in range(0, int(len(test_data) / hparams.batch_size) + 1):
             given, predict, align = infer_model.model.infer_step_beam(infer_sess, test_data.copy(), no_random=True,
@@ -261,10 +261,6 @@ def infer(hparams):
         f1.close()
         f2.close()
 
-        hyp_file = "/S1/LCWM/wangtm/output/amr/" + x + "/predict_file" + str(global_step)
-        ref_file = "/S1/LCWM/wangtm/output/amr/" + x + "/ref_file" + str(global_step)
-        result = os.popen("python multi_bleu.py -ref " + ref_file + " -hyp " + hyp_file)
-        print(result.read())
 
     else:
         raise ValueError("ckpt file not found.")
