@@ -21,7 +21,7 @@ python infer.py --enc_layers=8 --dec_layers=6 --num_heads=2 --num_units=256 --em
 #The output file can be found in the "output" folder directory.
 
 ## Citation
-
+```
 @article{wang2020amr,
   title={AMR-To-Text Generation with Graph Transformer},
   author={Wang, Tianming and Wan, Xiaojun and Jin, Hanqi},
@@ -31,3 +31,4 @@ python infer.py --enc_layers=8 --dec_layers=6 --num_heads=2 --num_units=256 --em
   year={2020},
   publisher={MIT Press}
 }
+```
