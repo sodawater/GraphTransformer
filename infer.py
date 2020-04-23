@@ -224,8 +224,8 @@ def infer(hparams):
         global_step = train_model.model.global_step.eval(session=train_sess)
         infer_model.model.saver.restore(infer_sess, ckpt.model_checkpoint_path)
         
-        f1 = open("output/" + "ref_file" + str(global_step), "w", encoding="utf-8")
-        f2 = open("output/" + "predict_file" + str(global_step), "w", encoding="utf-8")
+        f1 = open("ref_file" + str(global_step), "w", encoding="utf-8")
+        f2 = open("predict_file" + str(global_step), "w", encoding="utf-8")
         ct = 0
         for id in range(0, int(len(test_data) / hparams.batch_size) + 1):
             given, predict, align = infer_model.model.infer_step_beam(infer_sess, test_data.copy(), no_random=True,
