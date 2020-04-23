@@ -5,7 +5,7 @@ coming soon...
 
 ## Requirements
 * python 3.5
-* tensorflow >= 1.5
+* tensorflow 1.5
 
 ## Data Preprocessing
 We use the tools in https://github.com/Cartus/DCGCN (without anonymization) to preprocessing the data. Because AMR corpus has LDC license, we cannot distribute the preprocessed data. We upload some examples for format reference. If you have the license, feel free to contact us for getting the preprocessed data.
