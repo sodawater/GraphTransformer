@@ -301,8 +301,8 @@ if __name__ == "__main__":
     my_parser = argparse.ArgumentParser()
     add_arguments(my_parser)
     FLAGS, remaining = my_parser.parse_known_args()
-    FLAGS.train_dir = FLAGS.model_dir + FLAGS.train_dir
-    FLAGS.output_dir = FLAGS.out_dir + FLAGS.output_dir
+    FLAGS.train_dir = FLAGS.train_dir
+    FLAGS.output_dir = FLAGS.output_dir
     print(FLAGS)
     os.environ["CUDA_VISIBLE_DEVICES"] = FLAGS.gpu_device
     tf.app.run()
